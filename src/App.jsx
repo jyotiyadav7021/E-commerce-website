@@ -1,17 +1,21 @@
 
 
 import React from 'react'
+import { BrowserRouter,Routes, Route } from 'react-router'
+import HomePage from './pages/HomePage'
 
-function App() {
+function IndexPage() {
   
 
   return (
     <>
-      <h1>hello jyoti</h1>
-      <h5>Hello jyotiiiii</h5>
-      <h6>hello</h6>
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<HomePage/>}></Route>
+      </Routes>
+      </BrowserRouter>
     </>
   )
 }
 
-export default App
+export default IndexPage
