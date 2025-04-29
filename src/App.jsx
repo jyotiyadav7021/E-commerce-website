@@ -15,7 +15,7 @@ function IndexPage() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<HomePage/>}></Route>
-        <Route path='/' component={<ErrorPage/>}></Route>
+        <Route path='*' component={<ErrorPage/>}></Route>
       </Routes>
       
       
