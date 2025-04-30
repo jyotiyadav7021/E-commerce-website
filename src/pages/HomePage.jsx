@@ -3,6 +3,12 @@ import HeroSection from '../components/Home/HeroSection'
 import ProductCard from '../components/Home/ProductCard'
 
 const HomePage = () => {
+
+  
+
+
+
+
   return (
     <div className=''>
         <HeroSection></HeroSection>
