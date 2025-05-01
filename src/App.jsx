@@ -17,7 +17,7 @@ function IndexPage() {
     try {
       const response = await axios.get("https://fakestoreapi.com/products")
       const data = await response.data
-      dispatch(addProducts(data))
+      console.log(data)
     } catch (error) {
       console.log(error)
       
