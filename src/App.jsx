@@ -1,6 +1,6 @@
 
 
-import React, { use, useEffect } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import { BrowserRouter,Routes, Route } from 'react-router'
 import HomePage from './pages/HomePage'
 import ErrorPage from './pages/ErrorPage'
@@ -9,23 +9,12 @@ import Footer from './components/Footer'
 import axios from 'axios'
 import { useDispatch } from 'react-redux'
 import { addProducts } from './redux/Products.Slice'
+import SingleProductPage from './pages/SingleProductPage'
+import Loader from './components/Loader'
 function IndexPage() {
 
   const dispatch = useDispatch()
-
-  const fetchProduct = async()=>{
-    try {
-      const response = await axios.get("https://fakestoreapi.com/products")
-      const data = await response.data
-      dispatch(addProducts(data))
-    } catch (error) {
-      console.log(error)
-      
-    }
-  }
-  useEffect(()=>{
-    fetchProduct()
-  },[])
+  
   
 
   return (
@@ -34,6 +23,7 @@ function IndexPage() {
       <Navbar></Navbar>
       <Routes>
         <Route path='/' element={<HomePage/>}></Route>
+        <Route path="/product/:id" element={<SingleProductPage/>}/>
         <Route path='*' component={<ErrorPage/>}></Route>
       </Routes>
       

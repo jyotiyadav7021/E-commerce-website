@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router'
 
 const ProductCard = ({data}) => {
   return (
@@ -12,7 +13,7 @@ const ProductCard = ({data}) => {
                                   <p className="mb-4">{data.description}</p>
                                   <div className='flex items-center justify-between px-4'>
                                     <h1 className='text-xl font-bold'> &#8377; {Math.floor(data.price)}</h1>
-                                    <button className='px-3 py-2 bg-indigo-400 text-white rounded-3xl'>Add to cart</button>
+                                    <Link to={'/product/'+data.id}className='px-3 py-2 bg-indigo-400 text-white rounded-3xl'>Add to cart</Link>
                                   </div>
                                   
                               </div>
