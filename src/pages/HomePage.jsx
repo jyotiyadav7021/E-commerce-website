@@ -1,10 +1,12 @@
 import React from 'react'
 import HeroSection from '../components/Home/HeroSection'
 import ProductCard from '../components/Home/ProductCard'
+import { useSelector } from 'react-redux'
 
 const HomePage = () => {
 
-  
+  const products = useSelector((state) => state.productSlice.products);
+  // console.log(store)
 
 
 
@@ -20,8 +22,8 @@ const HomePage = () => {
                   </div>
                   <div className="flex flex-wrap -m-4">
                       {
-                        Array(5).fill(0).map((cur,i)=>{
-                            return <ProductCard key={i}></ProductCard>
+                        products && products.length>0 && products.map((cur,i)=>{
+                            return <ProductCard key={i} data={cur}></ProductCard>
                         })
                       }
                       

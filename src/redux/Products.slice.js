@@ -12,4 +12,4 @@ export const ProductSlice = createSlice({
     }
 })
 
-export const{addProducts} = ProductSlice.actions
+export const{addProducts} = ProductSlice.actions  
